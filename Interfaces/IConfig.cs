@@ -10,6 +10,8 @@ namespace BaseFramework.Interfaces
     public interface IConfig
     {
         BrowserType GetBrowser();
+
+        string GetUri();
         string GetUsername();
         string GetPassword();
 

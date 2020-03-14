@@ -1,4 +1,5 @@
 ﻿using BaseFramework.Configuration;
+using BaseFramework.CustomException;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -24,7 +25,7 @@ namespace BaseFramework.BaseClass
                 case BrowserType.IExplorer:
                     return new InternetExplorerDriver();
                 default:
-                    throw new Exception();
+                    throw new NoSuitableDriverException("Driver not found: "+ type.ToString());
             }
         }
     }

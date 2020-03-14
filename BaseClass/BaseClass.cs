@@ -1,5 +1,6 @@
 ﻿using BaseFramework.Configuration;
 using BaseFramework.Interfaces;
+using BaseFramework.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -13,17 +14,25 @@ using System.Threading.Tasks;
 
 namespace BaseFramework.BaseClass
 {
-    //[TestClass]
+    [TestClass]
     public class BaseClass
     {
-        public static IConfig config;
-        public static IWebDriver driver;
 
         [AssemblyInitialize]
-        private static void Init() {
-            config = new AppConfigReader();
-            driver = BrowserFactory.InitWebDriver(config.GetBrowser());
+        public static void Init(TestContext context) 
+        {
+            ObjectRepository.Config = new AppConfigReader();
+            ObjectRepository.Driver = BrowserFactory.InitWebDriver(ObjectRepository.Config.GetBrowser());
         }
 
+        [AssemblyCleanup]
+        public static void TearDown()
+        {
+            if (ObjectRepository.Driver != null)
+            {
+                ObjectRepository.Driver.Close();
+                ObjectRepository.Driver.Quit();
+            }
+        }
     }
 }

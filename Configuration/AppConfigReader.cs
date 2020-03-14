@@ -21,6 +21,11 @@ namespace BaseFramework.Configuration
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Username);
         }
 
+        public string GetUri()
+        {
+            return ConfigurationManager.AppSettings.Get(AppConfigKeys.Uri);
+        }
+
         public string GetUsername()
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Password);

@@ -59,9 +59,12 @@
     <Compile Include="Configuration\AppConfigKeys.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="CustomException\NoSuitableDriverException.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="BaseSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestScripts\PageNavigation\TestPageNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,7 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ComponentHelper\" />
-    <Folder Include="Settings\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

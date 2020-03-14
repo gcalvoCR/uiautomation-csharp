@@ -21,9 +21,6 @@ namespace BaseFramework
         [TestMethod]
         public void TestMethod2()
         {
-            IWebDriver driver = new ChromeDriver();
-            
-
             Console.WriteLine(ConfigurationManager.AppSettings.Get("Username"));
         }
 
