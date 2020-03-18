@@ -14,6 +14,8 @@ namespace BaseFramework.Interfaces
         string GetUri();
         string GetUsername();
         string GetPassword();
+        int GetPageTimeOut();
+        int GetElementTimeOut();
 
     }
 }

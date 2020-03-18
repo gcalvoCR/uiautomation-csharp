@@ -12,5 +12,7 @@ namespace BaseFramework.Configuration
         public const string Username = "Username";
         public const string Password = "Password";
         public const string Uri = "Uri";
+        public const string PageTimeOut = "PageTimeOut";
+        public const string ElementTimeOut = "ElementTimeOut";
     }
 }

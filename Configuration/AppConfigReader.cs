@@ -21,6 +21,14 @@ namespace BaseFramework.Configuration
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Username);
         }
 
+        public int GetPageTimeOut()
+        {
+            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.PageTimeOut);
+            if (timeout == null)
+                return 30;
+            return Convert.ToInt32(timeout);
+        }
+
         public string GetUri()
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Uri);
@@ -29,6 +37,14 @@ namespace BaseFramework.Configuration
         public string GetUsername()
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.Password);
+        }
+
+        public int GetElementTimeOut()
+        {
+            string timeout = ConfigurationManager.AppSettings.Get(AppConfigKeys.ElementTimeOut);
+            if (timeout == null)
+                return 30;
+            return Convert.ToInt32(timeout);
         }
     }
 }

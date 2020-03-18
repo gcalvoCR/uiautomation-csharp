@@ -1,4 +1,5 @@
-﻿using BaseFramework.Configuration;
+﻿using BaseFramework.ComponentHelper;
+using BaseFramework.Configuration;
 using BaseFramework.Interfaces;
 using BaseFramework.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -23,6 +24,9 @@ namespace BaseFramework.BaseClass
         {
             ObjectRepository.Config = new AppConfigReader();
             ObjectRepository.Driver = BrowserFactory.InitWebDriver(ObjectRepository.Config.GetBrowser());
+            ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageTimeOut());
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementTimeOut());
+            NavigationHelper.MaximizeWindow();
         }
 
         [AssemblyCleanup]
